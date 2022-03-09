@@ -1,3 +1,7 @@
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                        Css variables
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
 :root {
     /*
     dt: dark theme
@@ -11,27 +15,51 @@
     */
 
     /* light theme colors */
-    --clr-dt-vl-gray: hsl(0, 0%, 98%);
-    --clr-dt-vlg-blue: hsl(236, 33%, 92%);
-    --clr-dt-lg-blue: hsl(233, 11%, 84%);
-    --clr-dt-dg-blue: hsl(236, 9%, 61%);
-    --clr-dt-vdg-blue: hsl(235, 19%, 35%);
+    --clr-lt-vl-gray: hsl(0, 0%, 98%);
+    --clr-lt-vlg-blue: hsl(236, 33%, 92%);
+    --clr-lt-lg-blue: hsl(233, 11%, 84%);
+    --clr-lt-dg-blue: hsl(236, 9%, 61%);
+    --clr-lt-vdg-blue: hsl(235, 19%, 35%);
 
     /* dark theme colors */
-    --clr-lt-vd-blue: hsl(235, 21%, 11%);
-    --clr-lt-vd-ds-blue: hsl(235, 24%, 19%);
-    --clr-lt-lg-blue: hsl(234, 39%, 85%);
-    --clr-lt-lg-hv-blue: hsl(236, 33%, 92%);
-    --clr-lt-dg-blue: hsl(234, 11%, 52%);
-    --clr-lt-vdg-blue: hsl(233, 14%, 35%);
-    --clr-lt-vdg-blue2: hsl(237, 14%, 26%);
+    --clr-dt-vd-blue: hsl(235, 21%, 11%);
+    --clr-dt-vd-ds-blue: hsl(235, 24%, 19%);
+    --clr-dt-lg-blue: hsl(234, 39%, 85%);
+    --clr-dt-lg-hv-blue: hsl(236, 33%, 92%);
+    --clr-dt-dg-blue: hsl(234, 11%, 52%);
+    --clr-dt-vdg-blue: hsl(233, 14%, 35%);
+    --clr-dt-vdg-blue2: hsl(237, 14%, 26%);
 
     /* font-family */
-    --font-family: 'Josefin Sans', sans-serif;
+    --ff: 'Josefin Sans', sans-serif;
 
     /* make base font size 16px */
     font-size: 62.5%;
 
-    /* default-font-size */
-    --default-fs: 1.8rem;
+    /* default font size */
+    --fs: 1.8rem;
+}
+
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Utility Classes
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
+.bold {
+    font-weight: 700;
+}
+
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Base Styling
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
+body {
+    font-family: var(--ff);
+    font-size: var(--fs);
+    font-weight: 400;
+    background: no-repeat top/100% url("../../public/images/bg-mobile-dark.jpg"), var(--clr-dt-vd-blue);
+}
+
+h1 {
+    font-size: calc(var(--fs) * 1.5);
+    letter-spacing: 1.1rem;
 }
