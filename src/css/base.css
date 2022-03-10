@@ -59,7 +59,45 @@ body {
     background: no-repeat top/100% url("../../public/images/bg-mobile-dark.jpg"), var(--clr-dt-vd-blue);
 }
 
+header {
+    padding-block: 2rem 1rem;
+}
+
 h1 {
     font-size: calc(var(--fs) * 1.5);
     letter-spacing: 1.1rem;
+}
+
+p {
+    margin: 0;
+}
+
+.list-group > *:not(:last-of-type) {
+    border-bottom: 1px solid var(--clr-dt-vdg-blue2);
+}
+
+.list-group-item {
+    color: var(--clr-dt-dg-blue);
+    background-color: var(--clr-dt-vd-ds-blue);
+}
+
+
+/* overwrite bootstrap border */
+.border {
+    border: none !important;
+    border-radius: 5px !important;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid var(--clr-dt-vdg-blue);
+    border-radius: 50%;
+}
+
+.bg-check {
+    background: linear-gradient(60deg, rgb(120, 0, 233), rgb(19, 160, 179));
 }
