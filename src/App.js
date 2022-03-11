@@ -6,7 +6,7 @@ import FilterMenu from "./components/FilterMenu";
 
 export default function App() {
   return (
-    <div className="container-fluid p-5 light-mode">
+    <div className="container-fluid p-5 light-theme">
       <div className="bg"></div>
       <Header />
       <Input />

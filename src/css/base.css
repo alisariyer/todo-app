@@ -66,7 +66,7 @@
 }
 
 .instructions {
-    color: var(--clr-dt-dg-);
+    color: var(--clr-dt-dg-blue);
 }
 
 .menu-item.active {
@@ -137,27 +137,31 @@ p {
                     Light Theme Styling
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 
-.light-mode .btn-theme {
+.light-theme .btn-theme {
     background: center no-repeat url('../../public/images/icon-moon.svg');
 }
 
-.light-mode .bg {
+.light-theme .bg {
     background: no-repeat top/100% url("../../public/images/bg-mobile-light.jpg"), var(--clr-lt-vl-gray);
 }
 
-.light-mode .check-container {
+.light-theme .check-container {
     border-color: var(--clr-lt-vlg-blue);
 }
 
-.light-mode .list-group-item {
+.light-theme .list-group-item {
     background-color: var(--clr-lt-vl-gray);
     color: var(--clr-lt-dg-blue);
 }
 
-.light-mode .list-group > *:not(:last-of-type) {
+.light-theme .list-group > *:not(:last-of-type) {
     border-bottom: 1px solid var(--clr-lt-vlg-blue) !important;
 }
 
-.light-mode .not-finished {
+.light-theme .not-finished {
     color: var(--clr-dt-dg-blue);
+}
+
+.light-theme .instructions {
+    color: var(--clr-lt-dg-blue);
 }
