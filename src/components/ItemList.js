@@ -10,14 +10,14 @@ export default function ItemList() {
     "Test in different devices",
   ].map((word) => {
     return (
-      <div className="list-group-item px-4 py-3">
+      <div className="list-group-item border-0 p-4 align-items-center">
         <div className="row align-items-center">
           <div className="col-1 px-2">
-            <div className="img-container bg-check mx-auto">
+            <div className="check-container bg-check mx-auto">
               <img src="./images/icon-check.svg" alt="check" />
             </div>
           </div>
-          <div className="col-10 px-4">
+          <div className="col-10 px-4 not-finished">
             <p>{word}</p>
           </div>
           <div className="col-1 px-2 text-center">
@@ -27,5 +27,12 @@ export default function ItemList() {
       </div>
     );
   });
-  return <div className="list-group my-5 border"> {list}</div>;
+  return (
+    <div className="list-group shadow my-5 border-radius">   
+      {list}
+      <div className="list-group-item  p-4 border-0 d-flex justify-content-between align-items-center">
+        <p><span className="remain-item">3</span> items left</p>
+        <p>Clear Completed</p>
+      </div>  
+    </div>);
 }

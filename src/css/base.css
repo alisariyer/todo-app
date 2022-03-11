@@ -14,6 +14,9 @@
     hv: hover
     */
 
+    /* other colors */
+    --clr-blue: hsl(224, 100%, 65%);
+
     /* light theme colors */
     --clr-lt-vl-gray: hsl(0, 0%, 98%);
     --clr-lt-vlg-blue: hsl(236, 33%, 92%);
@@ -48,6 +51,28 @@
     font-weight: 700;
 }
 
+/* overwrite bootstrap border */
+.border-radius {
+    border-radius: 5px !important;
+}
+
+.bg-check {
+    background: linear-gradient(0deg, rgb(169, 78, 255), rgb(19, 239, 255));
+    border: none !important;
+}
+
+.not-finished {
+    color: var(--clr-dt-lg-hv-blue);
+}
+
+.instructions {
+    color: var(--clr-dt-dg-);
+}
+
+.menu-item.active {
+    color: var(--clr-blue);
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Base Styling
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
@@ -56,6 +81,12 @@ body {
     font-family: var(--ff);
     font-size: var(--fs);
     font-weight: 400;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -9999;
     background: no-repeat top/100% url("../../public/images/bg-mobile-dark.jpg"), var(--clr-dt-vd-blue);
 }
 
@@ -68,27 +99,31 @@ h1 {
     letter-spacing: 1.1rem;
 }
 
+.btn-theme {
+    width: calc(var(--fs) * 1.5);
+    height: calc(var(--fs) * 1.5);
+    background: center no-repeat url('../../public/images/icon-sun.svg');
+}
+
 p {
     margin: 0;
 }
 
+.list-group.shadow {
+    box-shadow: 0 1rem 3rem 0 var(--clr-lt-vlg-blue);
+}
+
 .list-group > *:not(:last-of-type) {
-    border-bottom: 1px solid var(--clr-dt-vdg-blue2);
+    border-bottom: 1px solid var(--clr-dt-vdg-blue2) !important;
 }
 
 .list-group-item {
+    height: calc(var(--fs) * 2.8);
     color: var(--clr-dt-dg-blue);
     background-color: var(--clr-dt-vd-ds-blue);
 }
 
-
-/* overwrite bootstrap border */
-.border {
-    border: none !important;
-    border-radius: 5px !important;
-}
-
-.img-container {
+.check-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,6 +133,31 @@ p {
     border-radius: 50%;
 }
 
-.bg-check {
-    background: linear-gradient(60deg, rgb(120, 0, 233), rgb(19, 160, 179));
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Light Theme Styling
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
+.light-mode .btn-theme {
+    background: center no-repeat url('../../public/images/icon-moon.svg');
+}
+
+.light-mode .bg {
+    background: no-repeat top/100% url("../../public/images/bg-mobile-light.jpg"), var(--clr-lt-vl-gray);
+}
+
+.light-mode .check-container {
+    border-color: var(--clr-lt-vlg-blue);
+}
+
+.light-mode .list-group-item {
+    background-color: var(--clr-lt-vl-gray);
+    color: var(--clr-lt-dg-blue);
+}
+
+.light-mode .list-group > *:not(:last-of-type) {
+    border-bottom: 1px solid var(--clr-lt-vlg-blue) !important;
+}
+
+.light-mode .not-finished {
+    color: var(--clr-dt-dg-blue);
 }
