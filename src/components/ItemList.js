@@ -13,7 +13,7 @@ export default function ItemList() {
       <div className="list-group-item border-0 p-4 align-items-center">
         <div className="row align-items-center">
           <div className="col-1 px-2">
-            <div className="check-container bg-check mx-auto">
+            <div className="check-container bg-chesck mx-auto">
               <img src="./images/icon-check.svg" alt="check" />
             </div>
           </div>
@@ -28,11 +28,19 @@ export default function ItemList() {
     );
   });
   return (
-    <div className="list-group shadow my-5 border-radius">   
+    <div className="list-group shadow my-5 border-radius">
       {list}
       <div className="list-group-item  p-4 border-0 d-flex justify-content-between align-items-center">
-        <p><span className="remain-item">3</span> items left</p>
+        <p>
+          <span className="remain-item">3</span> items left
+        </p>
+        <div className="filter-menu-desktop">
+          <span className="menu-item active mx-4">All</span>
+          <span className="menu-item mx-4">Active</span>
+          <span className="menu-item mx-4">Completed</span>
+        </div>
         <p>Clear Completed</p>
-      </div>  
-    </div>);
+      </div>
+    </div>
+  );
 }

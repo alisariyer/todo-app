@@ -61,6 +61,10 @@
     border: none !important;
 }
 
+.bg-check:hover {
+    border: none !important;
+}
+
 .not-finished {
     color: var(--clr-dt-lg-hv-blue);
 }
@@ -81,6 +85,17 @@ body {
     font-family: var(--ff);
     font-size: var(--fs);
     font-weight: 400;
+}
+
+input {
+    font: inherit;
+    margin: 0;
+    padding-left: .5rem;
+    border: none;
+}
+
+.container-fluid {
+    max-width: 650px;
 }
 
 .bg {
@@ -123,14 +138,42 @@ p {
     background-color: var(--clr-dt-vd-ds-blue);
 }
 
+.btn-theme,
+.list-group-item p,
+.list-group-item .check-container,
+.list-group-item [alt="check"],
+.list-group-item .menu-item {
+    cursor: pointer;
+}
+
 .check-container {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     width: 2.2rem;
     height: 2.2rem;
     border: 1px solid var(--clr-dt-vdg-blue);
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.check-container:hover {
+    border: none;
+    background: linear-gradient(0deg, rgb(169, 78, 255), rgb(19, 239, 255));
+}
+
+.check-container > img {
+    display: none;
+}
+
+.check-contaner:hover::before {
+    content: 'fewfwe';
+    position: absolute;
+    display: block;
+    inset: 0;
+    background-color: white;
+    z-index: 10000;
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -149,7 +192,8 @@ p {
     border-color: var(--clr-lt-vlg-blue);
 }
 
-.light-theme .list-group-item {
+.light-theme .list-group-item,
+.light-theme input {
     background-color: var(--clr-lt-vl-gray);
     color: var(--clr-lt-dg-blue);
 }
@@ -159,9 +203,31 @@ p {
 }
 
 .light-theme .not-finished {
-    color: var(--clr-dt-dg-blue);
+    color: var(--clr-lt-vdg-blue);
 }
 
 .light-theme .instructions {
     color: var(--clr-lt-dg-blue);
+}
+
+.filter-menu-desktop {
+    display: none;
+}
+
+.filter-menu-mobile {
+    display: flex;
+}
+
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+                    Media Queries
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
+@media screen and (min-width: 680px) {
+    .filter-menu-desktop {
+        display: flex;
+    }
+    
+    .filter-menu-mobile {
+        display: none;
+    }
 }
