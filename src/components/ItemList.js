@@ -10,9 +10,9 @@ export default function ItemList() {
     "Test application",
     "Test in different browser",
     "Test in different devices",
-  ].map((word) => {
+  ].map((word, index) => {
     return (
-      <div className="list-group-item border-0 p-4 align-items-center">
+      <div key={index} className="list-group-item border-0 p-4 align-items-center">
         <div className="row align-items-center">
           <div className="col-1 px-2">
             <div className="check-container bg-check mx-auto">
