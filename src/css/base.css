@@ -220,14 +220,38 @@ p {
     background: no-repeat top/100% url("../images/bg-mobile-light.jpg"), var(--clr-lt-vl-gray);
 }
 
+.light-theme .todo-input::placeholder {
+    color: var(--clr-lt-dg-blue);
+}
+
 .light-theme .check-container {
+    background-color: var(--clr-lt-vl-gray);
     border-color: var(--clr-lt-vlg-blue);
 }
 
-.light-theme .list-group-item,
-.light-theme input {
+.light-theme .check-container::after {
     background-color: var(--clr-lt-vl-gray);
+}
+
+.light-theme .list-group-item {
+    background-color: var(--clr-lt-vl-gray);
+}
+
+.light-theme .menu-item {
     color: var(--clr-lt-dg-blue);
+}
+
+.light-theme .menu-item.active {
+    color: var(--clr-blue);
+}
+
+.light-theme .menu-item:hover {
+    color: var(--clr-lt-vdg-blue);
+}
+
+.light-theme .todo-text,
+.light-theme .todo-input {
+    color: var(--clr-lt-vdg-blue);
 }
 
 .light-theme .list-group > *:not(:last-of-type) {
