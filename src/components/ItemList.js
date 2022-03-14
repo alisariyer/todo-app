@@ -1,4 +1,6 @@
 import React from "react";
+import CheckIcon from "./../images/icon-check.svg";
+import CrossIcon from "./../images/icon-cross.svg";
 
 export default function ItemList() {
   const list = [
@@ -13,15 +15,15 @@ export default function ItemList() {
       <div className="list-group-item border-0 p-4 align-items-center">
         <div className="row align-items-center">
           <div className="col-1 px-2">
-            <div className="check-container bg-chesck mx-auto">
-              <img src="./images/icon-check.svg" alt="check" />
+            <div className="check-container bg-check mx-auto">
+              <img src={CheckIcon} alt="check" />
             </div>
           </div>
           <div className="col-10 px-4 not-finished">
-            <p>{word}</p>
+            <p className="todo-text">{word}</p>
           </div>
           <div className="col-1 px-2 text-center">
-            <img src="./images/icon-cross.svg" alt="check" />
+            <img className="cross-icon" src={CrossIcon} alt="check" />
           </div>
         </div>
       </div>
@@ -39,7 +41,7 @@ export default function ItemList() {
           <span className="menu-item mx-4">Active</span>
           <span className="menu-item mx-4">Completed</span>
         </div>
-        <p>Clear Completed</p>
+        <p className="menu-item">Clear Completed</p>
       </div>
     </div>
   );

@@ -56,21 +56,16 @@
     border-radius: 5px !important;
 }
 
-.bg-check {
-    background: linear-gradient(0deg, rgb(169, 78, 255), rgb(19, 239, 255));
-    border: none !important;
-}
-
-.bg-check:hover {
-    border: none !important;
-}
-
 .not-finished {
     color: var(--clr-dt-lg-hv-blue);
 }
 
 .instructions {
     color: var(--clr-dt-dg-blue);
+}
+
+.menu-item:hover {
+    color: var(--clr-dt-lg-hv-blue);
 }
 
 .menu-item.active {
@@ -124,6 +119,14 @@ p {
     margin: 0;
 }
 
+.todo-input {
+    background-color: var(--clr-dt-hv-blue);
+    border: none;
+    outline:none;
+    color: var(--clr-dt-lg-blue);
+    width: 100%;
+}
+
 .list-group.shadow {
     box-shadow: 0 1rem 3rem 0 var(--clr-lt-vlg-blue);
 }
@@ -139,11 +142,19 @@ p {
 }
 
 .btn-theme,
-.list-group-item p,
+.todo-text,
 .list-group-item .check-container,
 .list-group-item [alt="check"],
 .list-group-item .menu-item {
     cursor: pointer;
+}
+
+.todo-text {
+    color: var(--clr-dt-lg-blue);
+}
+
+.todo-text:hover {
+    color: var(--clr-dt-lg-hv-blue);
 }
 
 .check-container {
@@ -153,9 +164,11 @@ p {
     align-items: center;
     width: 2.2rem;
     height: 2.2rem;
+    background-color: var(--clr-dt-vd-ds-blue);
     border: 1px solid var(--clr-dt-vdg-blue);
     border-radius: 50%;
     cursor: pointer;
+    z-index: 0;
 }
 
 .check-container:hover {
@@ -167,13 +180,32 @@ p {
     display: none;
 }
 
-.check-contaner:hover::before {
-    content: 'fewfwe';
+.check-container::after {
+    content: '';
     position: absolute;
-    display: block;
-    inset: 0;
-    background-color: white;
-    z-index: 10000;
+    inset: 1.5px;
+    border-radius: 50%;
+    background-color: var(--clr-dt-vd-ds-blue);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.list-group-item:hover .cross-icon {
+    opacity: 1;
+}
+
+.cross-icon {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+}
+
+
+.filter-menu-desktop {
+    display: none;
+}
+
+.filter-menu-mobile {
+    display: flex;
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -210,17 +242,10 @@ p {
     color: var(--clr-lt-dg-blue);
 }
 
-.filter-menu-desktop {
-    display: none;
-}
-
-.filter-menu-mobile {
-    display: flex;
-}
-
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Media Queries
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+
 
 @media screen and (min-width: 680px) {
     .filter-menu-desktop {

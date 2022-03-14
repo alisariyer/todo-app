@@ -10,7 +10,7 @@ export default function Input() {
             </div>
           </div>
           <div className="col-11">
-            <input type="text" placeholder="Type todo here" />
+            <input className="todo-input" type="text" placeholder="Type todo here" />
           </div>
         </div>
       </div>
