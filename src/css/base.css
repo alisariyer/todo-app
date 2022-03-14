@@ -97,7 +97,7 @@ input {
     position: fixed;
     inset: 0;
     z-index: -9999;
-    background: no-repeat top/100% url("./images/bg-mobile-dark.jpg"), var(--clr-dt-vd-blue);
+    background: no-repeat top/100% url("../images/bg-mobile-dark.jpg"), var(--clr-dt-vd-blue);
 }
 
 header {
@@ -112,7 +112,7 @@ h1 {
 .btn-theme {
     width: calc(var(--fs) * 1.5);
     height: calc(var(--fs) * 1.5);
-    background: center no-repeat url('./images/icon-sun.svg');
+    background: center no-repeat url('../images/icon-sun.svg');
 }
 
 p {
@@ -213,11 +213,11 @@ p {
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
 
 .light-theme .btn-theme {
-    background: center no-repeat url('./images/icon-moon.svg');
+    background: center no-repeat url('../images/icon-moon.svg');
 }
 
 .light-theme .bg {
-    background: no-repeat top/100% url("./images/bg-mobile-light.jpg"), var(--clr-lt-vl-gray);
+    background: no-repeat top/100% url("../images/bg-mobile-light.jpg"), var(--clr-lt-vl-gray);
 }
 
 .light-theme .check-container {
