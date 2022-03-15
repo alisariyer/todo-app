@@ -19,16 +19,12 @@ export default function App() {
   const [newTodo, setNewTodo] = useState('');
 
   const handleAddTodo = (e) => {
-    console.log(e);
-    const pressedKey = e.code;
-    setTodoList([...todoList, { id: nanoid(), content: `C: ${e.code}, kC: ${e.keyCode}, k: ${e.key}`}])
+    if (e.code === 'Enter' || e.code === 'NumpadEnter' || e.key === 'Enter' || e.key === 'NumpadEnter') {
+      if (newTodo.trim().length !== 0) {
+        setTodoList([...todoList, { id: nanoid(), content: newTodo}])
         setNewTodo('');
-    // if (pressedKey === 'Enter' || pressedKey === 'NumpadEnter') {
-    //   if (newTodo.trim().length !== 0) {
-    //     setTodoList([...todoList, { id: nanoid(), content: newTodo}])
-    //     setNewTodo('');
-    //   }
-    // }
+      }
+    }
   }
 
   return (
