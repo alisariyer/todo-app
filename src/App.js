@@ -19,8 +19,9 @@ export default function App() {
   const [newTodo, setNewTodo] = useState('');
 
   const handleAddTodo = (e) => {
+    console.log(e);
     const pressedKey = e.code;
-    setTodoList([...todoList, { id: nanoid(), content: `Basildi ${pressedKey}`}])
+    setTodoList([...todoList, { id: nanoid(), content: `C: ${e.code}, kC: ${e.keyCode}, k: ${e.key}`}])
         setNewTodo('');
     // if (pressedKey === 'Enter' || pressedKey === 'NumpadEnter') {
     //   if (newTodo.trim().length !== 0) {
