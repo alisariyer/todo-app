@@ -272,6 +272,14 @@ p {
 
 
 @media screen and (min-width: 680px) {
+    .bg {
+        background: no-repeat top/100% url("../images/bg-desktop-dark.jpg"), var(--clr-dt-vd-blue);
+    }
+
+    .light-theme .bg {
+        background: no-repeat top/100% url("../images/bg-desktop-light.jpg"), var(--clr-lt-vl-gray);
+    }
+
     .filter-menu-desktop {
         display: flex;
     }
