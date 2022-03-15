@@ -22,7 +22,7 @@ export default function App() {
     const pressedKey = e.code;
     if (pressedKey === 'Enter' || pressedKey === 'NumpadEnter') {
       if (newTodo.trim().length !== 0) {
-        setTodoList([...todoList, { id: nanoid(), content: newTodo}])
+        setTodoList([...todoList, { id: nanoid(), content: pressedKey}])
         setNewTodo('');
       }
     }
