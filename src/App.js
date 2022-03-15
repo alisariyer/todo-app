@@ -20,12 +20,14 @@ export default function App() {
 
   const handleAddTodo = (e) => {
     const pressedKey = e.code;
-    if (pressedKey === 'Enter' || pressedKey === 'NumpadEnter') {
-      if (newTodo.trim().length !== 0) {
-        setTodoList([...todoList, { id: nanoid(), content: pressedKey}])
+    setTodoList([...todoList, { id: nanoid(), content: pressedKey}])
         setNewTodo('');
-      }
-    }
+    // if (pressedKey === 'Enter' || pressedKey === 'NumpadEnter') {
+    //   if (newTodo.trim().length !== 0) {
+    //     setTodoList([...todoList, { id: nanoid(), content: newTodo}])
+    //     setNewTodo('');
+    //   }
+    // }
   }
 
   return (
