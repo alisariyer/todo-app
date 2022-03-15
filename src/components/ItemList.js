@@ -2,17 +2,14 @@ import React from "react";
 import CheckIcon from "./../images/icon-check.svg";
 import CrossIcon from "./../images/icon-cross.svg";
 
-export default function ItemList() {
-  const list = [
-    "Enhance todo project",
-    "Simplify codes",
-    "Check modularity",
-    "Test application",
-    "Test in different browser",
-    "Test in different devices",
-  ].map((word, index) => {
+export default function ItemList({ todoList }) {
+  
+  const list = todoList.map((todo) => {
     return (
-      <div key={index} className="list-group-item border-0 p-4 align-items-center">
+      <div
+        key={todo.id}
+        className="list-group-item border-0 p-4 align-items-center"
+      >
         <div className="row align-items-center">
           <div className="col-1 px-2">
             <div className="check-container bg-check mx-auto">
@@ -20,7 +17,7 @@ export default function ItemList() {
             </div>
           </div>
           <div className="col-10 px-4 not-finished">
-            <p className="todo-text">{word}</p>
+            <p className="todo-text">{todo.content}</p>
           </div>
           <div className="col-1 px-2 text-center">
             <img className="cross-icon" src={CrossIcon} alt="check" />

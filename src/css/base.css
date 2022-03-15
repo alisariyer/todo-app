@@ -151,6 +151,9 @@ p {
 
 .todo-text {
     color: var(--clr-dt-lg-blue);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .todo-text:hover {
