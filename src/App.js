@@ -9,7 +9,7 @@ export default function App() {
 
   const [isLightTheme, toggleTheme] = useReducer(prevState => !prevState, false);
 
-  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, content: 'Hey, press Enter to save your Todo'}]);
+  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, content: 'Hey, press Enter to save your Todo', isCompleted: false}]);
 
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList))
@@ -27,6 +27,16 @@ export default function App() {
     }
   }
 
+  const handleCheck = (todoId) => {
+    setTodoList(prevTodoList => prevTodoList.map(
+      todo => todo.id !== todoId ? todo : {
+        id: todo.id,
+        content: todo.content,
+        isCompleted: !todo.isCompleted
+      }
+    ))
+  }
+
   return (
     <div className={`container-fluid p-5 ${isLightTheme ? "light-theme" : ""}`}>
       <div className="bg"></div>
@@ -36,7 +46,7 @@ export default function App() {
         onTodoChange={(value) => setNewTodo(value)}
         onTodoKeyPress={handleAddTodo}
       />
-      <ItemList todoList={todoList} />
+      <ItemList todoList={todoList} handleCheck={handleCheck}/>
       <FilterMenu />
       <div className="instructions text-center my-5">
         Drag and drop to reorder list

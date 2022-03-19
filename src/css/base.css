@@ -139,6 +139,7 @@ p {
     height: calc(var(--fs) * 2.8);
     color: var(--clr-dt-dg-blue);
     background-color: var(--clr-dt-vd-ds-blue);
+    user-select: none;
 }
 
 .btn-theme,
@@ -191,6 +192,24 @@ p {
     background-color: var(--clr-dt-vd-ds-blue);
     cursor: pointer;
     z-index: 100;
+}
+
+.checked .check-container {
+    background: linear-gradient(0deg, rgb(169, 78, 255), rgb(19, 239, 255));
+}
+
+.checked .check-container::after {
+    background: none;
+}
+
+.checked img {
+    display: block !important;
+    z-index: 9999;
+}
+
+.checked .todo-text {
+    text-decoration:line-through;
+    color: var(--clr-dt-vdg-blue);
 }
 
 .list-group-item:hover .cross-icon {
@@ -267,6 +286,14 @@ p {
 
 .light-theme .instructions {
     color: var(--clr-lt-dg-blue);
+}
+
+.light-theme .checked .check-container::after {
+    background: none;
+}
+
+.light-theme .checked .todo-text {
+    color: var(--clr-lt-lg-blue);
 }
 
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
