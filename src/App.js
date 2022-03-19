@@ -11,8 +11,11 @@ export default function App() {
 
   const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, content: 'Hey, press Enter to save your Todo', isCompleted: false}]);
 
+  const [remainingTodos, setRemainingTodos] = useState(() => todoList.filter(todo => todo.isCompleted).length)
+
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList))
+    setRemainingTodos(todoList.filter(todo => !todo.isCompleted).length);
     console.warn('useEffect ran!');
   }, [todoList])
 
@@ -46,7 +49,11 @@ export default function App() {
         onTodoChange={(value) => setNewTodo(value)}
         onTodoKeyPress={handleAddTodo}
       />
-      <ItemList todoList={todoList} handleCheck={handleCheck}/>
+      <ItemList 
+        remainingTodos={remainingTodos}
+        todoList={todoList} 
+        handleCheck={handleCheck}
+      />
       <FilterMenu />
       <div className="instructions text-center my-5">
         Drag and drop to reorder list
