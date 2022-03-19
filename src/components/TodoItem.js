@@ -3,7 +3,6 @@ import CheckIcon from "./../images/icon-check.svg";
 import CrossIcon from "./../images/icon-cross.svg";
 
 export default function TodoItem({ todo, handleCheck }) {
-console.log(todo);
   return (
     <div
       className={`${todo.isCompleted ? "checked" : ""} list-group-item border-0 p-4 align-items-center`}
