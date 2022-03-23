@@ -1,4 +1,5 @@
 import React, { useState, useReducer, useEffect } from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import ItemList from "./components/ItemList";
@@ -9,7 +10,7 @@ export default function App() {
 
   const [isLightTheme, toggleTheme] = useReducer(prevState => !prevState, false);
 
-  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, content: 'Hey, press Enter to save your Todo', isCompleted: false}]);
+  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, index: 0, content: 'Hey, press Enter to save your Todo', isCompleted: false}]);
   
   // to manage no-completed todo item number
   const [remainingTodos, setRemainingTodos] = useState(() => todoList.filter(todo => todo.isCompleted).length)
@@ -21,8 +22,17 @@ export default function App() {
   // 0: All (default), 1: Active, 2: Completed
   const [showStatus, setShowStatus] = useState(0);
 
+  const getNextIndex = (arr) => {
+    if (arr.length === 0) return 0;
+    const biggerIndex = arr.map((todoObj) => todoObj.index).reduce((max, cur) => max > cur ? max : cur) + 1;
+    return biggerIndex;
+  }
+
+  const createNewTodo = () => {
+    return { id: nanoid(), index: getNextIndex(todoList), content: newTodo, isCompleted: false}
+  }
+
   const filteredTodoList = todoList.filter(todo => {
-    console.log('todo');
     if (showStatus === 1) {
       return !todo.isCompleted
     } else if (showStatus === 2) {
@@ -34,14 +44,13 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todoList))
     setRemainingTodos(todoList.filter(todo => !todo.isCompleted).length);
-    console.warn('useEffect ran!');
   }, [todoList])
 
 
   const handleAddTodo = (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter' || e.key === 'Enter' || e.key === 'NumpadEnter') {
       if (newTodo.trim().length !== 0) {
-        setTodoList([...todoList, { id: nanoid(), content: newTodo, isCompleted: false}])
+        setTodoList([createNewTodo(), ...todoList]);
         setNewTodo('');
       }
     }
@@ -51,8 +60,7 @@ export default function App() {
   const handleCheck = (todoId) => {
     setTodoList(prevTodoList => prevTodoList.map(
       todo => todo.id !== todoId ? todo : {
-        id: todo.id,
-        content: todo.content,
+        ...todo,
         isCompleted: !todo.isCompleted
       }
     ))
@@ -66,6 +74,7 @@ export default function App() {
     setTodoList(prevTodoList => prevTodoList.filter(
       todo => !todo.isCompleted
     ))
+    setSelectAll(false);
   }
 
   const handleSelectAll = () => {
@@ -76,7 +85,22 @@ export default function App() {
     setTodoList( prevTodoList => prevTodoList.map(todo => ({...todo, isCompleted: selectAll})));
   }, [selectAll])
 
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId } = result;
+    
+    if (!destination) return;
+    if (destination.index === source.index) return;
+
+    const removedTodo = todoList.splice(source.index, 1);
+    console.log(todoList);
+    const destinationObj = todoList[destination.index];
+    console.log(destinationObj);
+  }
+
   return (
+    <DragDropContext
+    onDragEnd={onDragEnd}
+  >
     <div className={`container-fluid p-5 ${isLightTheme ? "light-theme" : ""}`}>
       <div className="bg"></div>
       <Header toggleTheme={toggleTheme}/>
@@ -100,5 +124,6 @@ export default function App() {
         Drag and drop to reorder list
       </div>
     </div>
+    </DragDropContext>
   );
 }

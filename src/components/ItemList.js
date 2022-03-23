@@ -1,15 +1,43 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import { Droppable } from "react-beautiful-dnd";
+import styled from "styled-components";
 
-export default function ItemList({ todoList, handleCheck, remainingTodos, showStatus, handleShowStatus, handleClearCompleted }) {
+const Container = styled.div``;
 
-  const list = todoList.map((todo) => {
-    return <TodoItem key={todo.id} todo={todo} handleCheck={handleCheck}/>;
+export default function ItemList({
+  todoList,
+  handleCheck,
+  remainingTodos,
+  showStatus,
+  handleShowStatus,
+  handleClearCompleted,
+}) {
+  const list = todoList.map((todo, index) => {
+    return (
+      <TodoItem
+        key={todo.id}
+        index={index}
+        todo={todo}
+        handleCheck={handleCheck}
+      />
+    );
   });
-  
+
   return (
     <div className="list-group shadow my-5 border-radius">
-      {list}
+      <Droppable droppableId="abc">
+        {(provided, snapshot) => (
+          <Container
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            isDraggingOver={snapshot.isDraggingOver}
+          >
+            {list}
+            {provided.placeholder}
+          </Container>
+        )}
+      </Droppable>
       <div className="list-group-item  p-4 border-0 d-flex justify-content-between align-items-center">
         <p>
           <span className="remain-item">{remainingTodos}</span> items left
@@ -18,17 +46,25 @@ export default function ItemList({ todoList, handleCheck, remainingTodos, showSt
           <span
             className={`menu-item mx-4 ${showStatus === 0 ? "active" : ""}`}
             onClick={() => handleShowStatus(0)}
-          >All</span>
-          <span 
+          >
+            All
+          </span>
+          <span
             className={`menu-item mx-4 ${showStatus === 1 ? "active" : ""}`}
             onClick={() => handleShowStatus(1)}
-          >Active</span>
+          >
+            Active
+          </span>
           <span
             className={`menu-item mx-4 ${showStatus === 2 ? "active" : ""}`}
             onClick={() => handleShowStatus(2)}
-          >Completed</span>
+          >
+            Completed
+          </span>
         </div>
-        <p className="menu-item" onClick={() => handleClearCompleted()}>Clear Completed</p>
+        <p className="menu-item" onClick={() => handleClearCompleted()}>
+          Clear Completed
+        </p>
       </div>
     </div>
   );
