@@ -10,9 +10,9 @@ export default function Input({
 }) {
   return (
     <div className="list-group">
-      <div className="list-group-item border-radius border-0 p-4">
-        <div className="row">
-          <div className={`col-1 ${selectAll ? "checked" : ""}`}>
+      <div className="list-group-item d-flex justify-content-between align-items-center border-radius border-0">
+        <div className="row flex-grow-1 justify-content-center align-items-center">
+          <div className={`col-1 align-items-center ${selectAll ? "checked" : ""}`}>
             <div
               className="check-container bg-check mx-auto"
               onClick={() => handleSelectAll()}

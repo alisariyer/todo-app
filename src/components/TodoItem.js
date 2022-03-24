@@ -6,7 +6,7 @@ import CrossIcon from "./../images/icon-cross.svg";
 
 const Container = styled.div`
   border-radius: ${props => props.isDragging ? '5px' : '0'};
-  box-shadow: ${props => props.isDragging ? '0 0 15px #F0E61A' : 'none'};
+  box-shadow: ${props => props.isDragging ? '0 0 15px #4d7cff' : 'none'};
 `;
 
 export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
@@ -22,22 +22,22 @@ export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
           <div
             className={`${
               todo.isCompleted ? "checked" : ""
-            } list-group-item border-0 py-3 justify-content-center align-items-center`}
+            } d-flex justify-content-between align-items-center list-group-item border-0`}
           >
-            <div className="row justify-content-center align-items-center">
-              <div className="col-1">
+            <div className="row flex-grow-1 justify-content-center align-items-center">
+              <div className="col-1 align-items-center">
                 <div
-                  className="check-container bg-check"
+                  className="check-container bg-check mx-auto"
                   onClick={() => handleCheck(todo.id)}
                 >
                   <img src={CheckIcon} alt="check" />
                 </div>
               </div>
-              <div className="col-10 not-finished">
-                <p className="px-2 px-sm-0 todo-text">{todo.content}</p>
+              <div className="col-10 d-flex not-finished">
+                <p className="align-self-end px-2 px-sm-0 todo-text">{todo.content}</p>
               </div>
               <div className="col-1 p-0" onClick={() => todo.isCompleted ? handleRemove(todo.id) : null}>
-                <img className={`cross-icon ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
+                <img className={`cross-icon mx-auto ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
               </div>
             </div>
           </div>
