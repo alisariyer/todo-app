@@ -6,7 +6,7 @@ import CrossIcon from "./../images/icon-cross.svg";
 
 const Container = styled.div`
   border-radius: ${props => props.isDragging ? '5px' : '0'};
-  box-shadow: ${props => props.isDragging ? '0 0 10px yellow' : 'none'};
+  box-shadow: ${props => props.isDragging ? '0 0 15px #F0E61A' : 'none'};
 `;
 
 export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
