@@ -22,21 +22,21 @@ export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
           <div
             className={`${
               todo.isCompleted ? "checked" : ""
-            } list-group-item border-0 p-3 justify-content-center align-items-center`}
+            } list-group-item border-0 py-3 justify-content-center align-items-center`}
           >
             <div className="row justify-content-center align-items-center">
               <div className="col-1">
                 <div
-                  className="check-container bg-check mx-auto"
+                  className="check-container bg-check"
                   onClick={() => handleCheck(todo.id)}
                 >
                   <img src={CheckIcon} alt="check" />
                 </div>
               </div>
               <div className="col-10 not-finished">
-                <p className="todo-text">{todo.content}</p>
+                <p className="px-2 px-sm-0 todo-text">{todo.content}</p>
               </div>
-              <div className="col-1" onClick={() => todo.isCompleted ? handleRemove(todo.id) : null}>
+              <div className="col-1 p-0" onClick={() => todo.isCompleted ? handleRemove(todo.id) : null}>
                 <img className={`cross-icon ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
               </div>
             </div>
