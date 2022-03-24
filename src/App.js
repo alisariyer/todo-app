@@ -10,7 +10,11 @@ export default function App() {
 
   const [isLightTheme, toggleTheme] = useReducer(prevState => !prevState, false);
 
-  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ { id: 0, index: 0, content: 'Hey, press Enter to save your Todo', isCompleted: false}]);
+  const createNewTodo = (todoText = 'Type a TODO') => {
+    return { id: nanoid(), content: todoText, isCompleted: false}
+  }
+
+  const [todoList, setTodoList] = useState(() => JSON.parse(localStorage.getItem('todoList')) || [ createNewTodo() ]);
   
   // to manage no-completed todo item number
   const [remainingTodos, setRemainingTodos] = useState(() => todoList.filter(todo => todo.isCompleted).length)
@@ -21,16 +25,6 @@ export default function App() {
   
   // 0: All (default), 1: Active, 2: Completed
   const [showStatus, setShowStatus] = useState(0);
-
-  const getNextIndex = (arr) => {
-    if (arr.length === 0) return 0;
-    const biggerIndex = arr.map((todoObj) => todoObj.index).reduce((max, cur) => max > cur ? max : cur) + 1;
-    return biggerIndex;
-  }
-
-  const createNewTodo = () => {
-    return { id: nanoid(), index: getNextIndex(todoList), content: newTodo, isCompleted: false}
-  }
 
   const filteredTodoList = todoList.filter(todo => {
     if (showStatus === 1) {
@@ -50,7 +44,7 @@ export default function App() {
   const handleAddTodo = (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter' || e.key === 'Enter' || e.key === 'NumpadEnter') {
       if (newTodo.trim().length !== 0) {
-        setTodoList([createNewTodo(), ...todoList]);
+        setTodoList([createNewTodo(newTodo), ...todoList]);
         setNewTodo('');
       }
     }
