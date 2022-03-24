@@ -49,12 +49,9 @@ Users should be able to:
 - CSS custom properties
 - CSS utility classes
 - Mobile-first workflow
-- Create main structures
-- Appling Bootstrap v5 and custom CSS
-- Dark theme styling
-- Active states styling
-- Light theme styling
-- Desktop view styling
+- Bootstrap v5
+- Styled Components
+- React Beautiful DND library
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
