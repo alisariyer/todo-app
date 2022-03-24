@@ -4,7 +4,10 @@ import styled from "styled-components";
 import CheckIcon from "./../images/icon-check.svg";
 import CrossIcon from "./../images/icon-cross.svg";
 
-const Container = styled.div``;
+const Container = styled.div`
+  border-radius: ${props => props.isDragging ? '5px' : '0'};
+  box-shadow: ${props => props.isDragging ? '0 0 10px yellow' : 'none'};
+`;
 
 export default function TodoItem({ todo, index, handleCheck }) {
   return (

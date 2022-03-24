@@ -127,15 +127,20 @@ p {
     width: 100%;
 }
 
+.list-group {
+    overflow: hidden;
+}
+
 .list-group.shadow {
     box-shadow: 0 1rem 3rem 0 var(--clr-lt-vlg-blue);
 }
 
-.list-group > *:not(:last-of-type) {
+.list-group .list-group-item {
     border-bottom: 1px solid var(--clr-dt-vdg-blue2) !important;
 }
 
-.list-group-item {
+.list-group-item, 
+.list-status-item {
     height: calc(var(--fs) * 2.8);
     color: var(--clr-dt-dg-blue);
     background-color: var(--clr-dt-vd-ds-blue);
@@ -146,7 +151,7 @@ p {
 .todo-text,
 .list-group-item .check-container,
 .list-group-item [alt="check"],
-.list-group-item .menu-item {
+.list-status-item .menu-item {
     cursor: pointer;
 }
 
@@ -187,7 +192,7 @@ p {
 .check-container::after {
     content: '';
     position: absolute;
-    inset: 1.5px;
+    inset: 0.2rem;
     border-radius: 50%;
     background-color: var(--clr-dt-vd-ds-blue);
     cursor: pointer;
@@ -255,7 +260,8 @@ p {
     background-color: var(--clr-lt-vl-gray);
 }
 
-.light-theme .list-group-item {
+.light-theme .list-group-item,
+.light-theme .list-status-item {
     background-color: var(--clr-lt-vl-gray);
 }
 
@@ -276,7 +282,7 @@ p {
     color: var(--clr-lt-vdg-blue);
 }
 
-.light-theme .list-group > *:not(:last-of-type) {
+.light-theme .list-group .list-group-item {
     border-bottom: 1px solid var(--clr-lt-vlg-blue) !important;
 }
 

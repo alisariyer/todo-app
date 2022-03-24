@@ -84,11 +84,11 @@ export default function App() {
     
     if (!destination) return;
     if (destination.index === source.index) return;
-
-    const removedTodo = todoList.splice(source.index, 1);
-    console.log(todoList);
-    const destinationObj = todoList[destination.index];
-    console.log(destinationObj);
+    const tempTodoList = [...todoList];
+    const removedTodo = tempTodoList.splice(source.index, 1);
+    tempTodoList.splice(destination.index, 0, removedTodo[0]);
+    setTodoList(tempTodoList)
+    console.log(tempTodoList);
   }
 
   return (

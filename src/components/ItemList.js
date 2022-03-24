@@ -3,7 +3,11 @@ import TodoItem from "./TodoItem";
 import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 
-const Container = styled.div``;
+const Container = styled.div`
+  background-color: transparent;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+`;
 
 export default function ItemList({
   todoList,
@@ -26,7 +30,7 @@ export default function ItemList({
 
   return (
     <div className="list-group shadow my-5 border-radius">
-      <Droppable droppableId="abc">
+      <Droppable droppableId="x">
         {(provided, snapshot) => (
           <Container
             ref={provided.innerRef}
@@ -38,7 +42,7 @@ export default function ItemList({
           </Container>
         )}
       </Droppable>
-      <div className="list-group-item  p-4 border-0 d-flex justify-content-between align-items-center">
+      <div className="list-status-item  p-4 border-0 d-flex justify-content-between align-items-center">
         <p>
           <span className="remain-item">{remainingTodos}</span> items left
         </p>
