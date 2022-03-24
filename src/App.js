@@ -64,11 +64,17 @@ export default function App() {
     setShowStatus(statusCode);
   }
 
-  const handleClearCompleted = () => {
-    setTodoList(prevTodoList => prevTodoList.filter(
-      todo => !todo.isCompleted
-    ))
-    setSelectAll(false);
+  const handleRemove = (todoId = false) => {
+    if (todoId) {
+      setTodoList(prevTodoList => prevTodoList.filter(
+        todo => todo.id !== todoId
+      ))
+    } else {
+      setTodoList(prevTodoList => prevTodoList.filter(
+        todo => !todo.isCompleted
+      ))
+      setSelectAll(false);
+    }
   }
 
   const handleSelectAll = () => {
@@ -111,7 +117,7 @@ export default function App() {
         handleCheck={handleCheck}
         showStatus={showStatus}
         handleShowStatus={handleShowStatus}
-        handleClearCompleted={handleClearCompleted}
+        handleRemove={handleRemove}
       />
       <FilterMenu showStatus={showStatus} handleShowStatus={handleShowStatus}/>
       <div className="instructions text-center my-5">

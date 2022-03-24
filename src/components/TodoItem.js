@@ -9,7 +9,7 @@ const Container = styled.div`
   box-shadow: ${props => props.isDragging ? '0 0 10px yellow' : 'none'};
 `;
 
-export default function TodoItem({ todo, index, handleCheck }) {
+export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
   return (
     <Draggable draggableId={todo.id} index={index}>
       {(provided, snapshot) => (
@@ -36,8 +36,8 @@ export default function TodoItem({ todo, index, handleCheck }) {
               <div className="col-10 not-finished">
                 <p className="todo-text">{todo.content}</p>
               </div>
-              <div className="col-1">
-                <img className={`cross-icon ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="check" />
+              <div className="col-1" onClick={() => todo.isCompleted ? handleRemove(todo.id) : null}>
+                <img className={`cross-icon ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
               </div>
             </div>
           </div>

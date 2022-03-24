@@ -15,7 +15,7 @@ export default function ItemList({
   remainingTodos,
   showStatus,
   handleShowStatus,
-  handleClearCompleted,
+  handleRemove,
 }) {
   const list = todoList.map((todo, index) => {
     return (
@@ -24,6 +24,7 @@ export default function ItemList({
         index={index}
         todo={todo}
         handleCheck={handleCheck}
+        handleRemove={handleRemove}
       />
     );
   });
@@ -66,7 +67,7 @@ export default function ItemList({
             Completed
           </span>
         </div>
-        <p className="menu-item" onClick={() => handleClearCompleted()}>
+        <p className="menu-item" onClick={() => handleRemove()}>
           Clear Completed
         </p>
       </div>
