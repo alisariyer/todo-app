@@ -37,7 +37,7 @@ export default function TodoItem({ todo, index, handleCheck, handleRemove }) {
                 <p className="align-self-end px-2 px-sm-0 todo-text">{todo.content}</p>
               </div>
               <div className="col-1 p-0" onClick={() => todo.isCompleted ? handleRemove(todo.id) : null}>
-                <img className={`cross-icon mx-auto ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
+                <img className={`cross-icon me-auto ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="erase" />
               </div>
             </div>
           </div>
