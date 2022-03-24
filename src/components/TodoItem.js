@@ -22,10 +22,10 @@ export default function TodoItem({ todo, index, handleCheck }) {
           <div
             className={`${
               todo.isCompleted ? "checked" : ""
-            } list-group-item border-0 p-4 align-items-center`}
+            } list-group-item border-0 p-3 justify-content-center align-items-center`}
           >
-            <div className="row align-items-center">
-              <div className="col-1 px-2">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-1">
                 <div
                   className="check-container bg-check mx-auto"
                   onClick={() => handleCheck(todo.id)}
@@ -33,11 +33,11 @@ export default function TodoItem({ todo, index, handleCheck }) {
                   <img src={CheckIcon} alt="check" />
                 </div>
               </div>
-              <div className="col-10 px-4 not-finished">
+              <div className="col-10 not-finished">
                 <p className="todo-text">{todo.content}</p>
               </div>
-              <div className="col-1 px-2 text-center">
-                <img className="cross-icon" src={CrossIcon} alt="check" />
+              <div className="col-1">
+                <img className={`cross-icon ${todo.isCompleted ? "opacity-1" : ""}`} src={CrossIcon} alt="check" />
               </div>
             </div>
           </div>

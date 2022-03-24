@@ -72,6 +72,10 @@
     color: var(--clr-blue);
 }
 
+.opacity-1 {
+    opacity: 1 !important;
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Base Styling
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
@@ -116,7 +120,7 @@ h1 {
 }
 
 p {
-    margin: 0;
+    margin: 0px;
 }
 
 .todo-input {
@@ -217,15 +221,10 @@ p {
     color: var(--clr-dt-vdg-blue);
 }
 
-.list-group-item:hover .cross-icon {
-    opacity: 1;
-}
-
 .cross-icon {
     opacity: 0;
     transition: opacity 250ms ease-in-out;
 }
-
 
 .filter-menu-desktop {
     display: none;
