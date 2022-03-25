@@ -11,7 +11,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -50,45 +49,23 @@ Users should be able to:
 - CSS utility classes
 - Mobile-first workflow
 - Bootstrap v5
-- Styled Components
-- React Beautiful DND library
+- [Styled Components](https://styled-components.com/)
+- [React Beautiful DND library](https://github.com/atlassian/react-beautiful-dnd)
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned to use Styled Components and React beautiful drag and drop library.
 
-To see how you can add code snippets, see below:
+### Useful Resources
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+I found this course very useful course to learn React Beautiful DND:
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+[Beautiful and Accessible Drag and Drop with react-beautiful-dnd](https://https://egghead.io/courses/beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- Website - [Ali Sariyer](https://alisariyer.github.io/alisariyer)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/alisariyer)
+- Linkedin - [@yourusername](https://www.linkedin.com/in/alisariyer)
+- Twitter - [@yourusername](https://www.twitter.com/sariyer_ali)
