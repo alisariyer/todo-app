@@ -13,7 +13,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -34,6 +33,10 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
+
+### Tip
+
+If you create a shortcut on your mobile to your home screen, you can use it as a mobile application. (Tested only Android device).
 
 ### Links
 
