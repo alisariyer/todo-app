@@ -3,45 +3,45 @@
   "name": "Minimalist & Modern ToDo App",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "images/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "/logo-120.png",
+      "src": "images/logo-120.png",
       "sizes": "120x120",
       "type": "image/png"
     },
     {
-      "src": "/logo-144.png",
+      "src": "images/logo-144.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/logo-152.png",
+      "src": "images/logo-152.png",
       "sizes": "152x152",
       "type": "image/png"
     },
     {
-      "src": "/logo-167.png",
+      "src": "images/logo-167.png",
       "sizes": "167x167",
       "type": "image/png"
     },
     {
-      "src": "/logo-180.png",
+      "src": "images/logo-180.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/logo-192.png",
+      "src": "images/logo-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/logo-512.png",
+      "src": "images/logo-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
