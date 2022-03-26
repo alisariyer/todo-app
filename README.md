@@ -7,6 +7,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [Installation](#installation)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -34,9 +35,9 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-### Tip
+### Installation
 
-If you create a shortcut on your mobile to your home screen, you can use it as a mobile application. (Tested only Android device).
+This is a Progressive Web Application(PWA) so you can install it on your mobile or desktop. Just go to options from your browser and click install button.
 
 ### Links
 
@@ -69,6 +70,6 @@ I found this course very useful course to learn React Beautiful DND:
 ## Author
 
 - Website - [Ali Sariyer](https://alisariyer.github.io/alisariyer)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/alisariyer)
-- Linkedin - [@yourusername](https://www.linkedin.com/in/alisariyer)
-- Twitter - [@yourusername](https://www.twitter.com/sariyer_ali)
+- Frontend Mentor - [@alisariyer](https://www.frontendmentor.io/profile/alisariyer)
+- Linkedin - [@alisariyer](https://www.linkedin.com/in/alisariyer)
+- Twitter - [@sariyer_ali](https://www.twitter.com/sariyer_ali)

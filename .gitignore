@@ -4,6 +4,7 @@
 *.sketch
 *.fig
 *.xd
+*.ai
 
 # dependencies
 /node_modules
