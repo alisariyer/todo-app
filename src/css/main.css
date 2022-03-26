@@ -235,6 +235,21 @@ p {
     display: flex;
 }
 
+footer.attribution {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--clr-dt-vdg-blue);
+}
+
+footer.attribution a {
+    color: var(--clr-dt-lg-hv-blue);
+    text-decoration: none;
+}
+
+footer.attribution a:hover {
+    text-decoration: underline;
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Light Theme Styling
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
