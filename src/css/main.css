@@ -317,6 +317,14 @@ footer.attribution a:hover {
     color: var(--clr-lt-lg-blue);
 }
 
+.light-theme footer.attribution {
+    color: var(--clr-lt-dg-blue);
+}
+
+.light-theme footer.attribution a {
+    color: var(--clr-lt-vdg-blue);
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
                     Media Queries
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
