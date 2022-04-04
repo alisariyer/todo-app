@@ -156,6 +156,7 @@ p {
 .list-group-item .check-container,
 .list-group-item [alt="check"],
 .list-status-item .menu-item,
+.filter-menu-mobile .menu-item,
 .cross-icon.opacity-1 {
     cursor: pointer;
 }
